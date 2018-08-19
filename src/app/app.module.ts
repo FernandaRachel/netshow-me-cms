@@ -10,7 +10,8 @@ import { NavBarComponent } from './shared/nav-bar.component';
   declarations: [
     AppComponent,
     MainPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule

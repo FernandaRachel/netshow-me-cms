@@ -1,6 +1,9 @@
 <app-nav-bar></app-nav-bar>
 
-<!-- <app-side-bar></app-side-bar> -->
-<div class="m-5">
-    <app-main-page></app-main-page>
-</div>
+<app-side-bar class="col-md-3">
+    <ng-template>
+        <router-outlet></router-outlet>
+    </ng-template>
+</app-side-bar>
+<!-- <div class="m-5">
+</div> -->
