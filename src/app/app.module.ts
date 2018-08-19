@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing.module';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,8 +15,9 @@ import { NavBarComponent } from './shared/nav-bar.component';
     SideBarComponent
   ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule,
+    AppRoutingModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
