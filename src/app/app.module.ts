@@ -7,6 +7,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NavBarComponent } from './shared/nav-bar.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

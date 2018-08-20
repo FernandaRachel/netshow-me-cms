@@ -1,18 +1,26 @@
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SignInComponent } from './home/signin/signin.component';
 
 
 const routes: Routes = [
     {
-        path:'',
+        path:'\main',
+        pathMatch: 'full',
         component: MainPageComponent
+    },
+    {
+        path:'',
+        pathMatch: 'full',
+        component: SignInComponent
     }
+    
 ];
 
 @NgModule({
     imports: [ 
-        RouterModule.forRoot(routes, { useHash: true } ) 
+        RouterModule.forRoot(routes) 
     ],
     exports: [ RouterModule ]
 })
