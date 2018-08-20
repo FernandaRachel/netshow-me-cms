@@ -8,6 +8,9 @@ import { NavBarComponent } from './shared/nav-bar.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HomeModule } from './home/home.module';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HomeModule
+    HomeModule,
+    AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

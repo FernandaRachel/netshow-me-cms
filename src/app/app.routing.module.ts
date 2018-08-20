@@ -2,6 +2,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './home/signin/signin.component';
+import { CadastroComponent } from './home/cadastro/cadastro.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,11 @@ const routes: Routes = [
         path:'',
         pathMatch: 'full',
         component: SignInComponent
+    },
+    {
+        path:'\cadastro',
+        pathMatch: 'full',
+        component: CadastroComponent
     }
     
 ];

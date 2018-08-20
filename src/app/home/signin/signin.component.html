@@ -1,31 +1,31 @@
 <div class="container col-4">
 <h4 class="text-center font-weight-bold text-primary">Bem-Vindo!</h4>
 
-<form [formGroup]="loginForm" class="form mt-4" (submit)="redirect()">
+<form [formGroup]="loginForm" class="form mt-4" (submit)="autenticar()">
 
     <div class="form-group">
         <input 
-            formControlName="userName"
+            formControlName="email"
             class="form-control" 
-            placeholder="user name" 
+            placeholder="Email" 
             autofocus>  
         <small
-            *ngIf="loginForm.get('userName').errors?.required"
+            *ngIf="loginForm.get('email').errors?.required"
             class="text-danger d-block mt-2">
-            Digite um usuario!
+            Digite um Email!
         </small>
     </div>
 
     <div class="form-group">
         <input
-        formControlName="password"
+        formControlName="senha"
             type="password" 
             class="form-control" 
-            placeholder="password">  
+            placeholder="Senha">  
         <small
-            *ngIf="loginForm.get('password').errors?.required"
+            *ngIf="loginForm.get('senha').errors?.required"
             class="text-danger d-block mt-2">
-            Digite uma senha!
+            Digite uma Senha!
         </small>            
     </div>
 
@@ -38,5 +38,5 @@
 
 </form>
 
-<p>Not a user? <a>Register now</a></p>
+<p>Não tem uma conta? <a [routerLink]="['\cadastro']">Crie aqui</a></p>
 </div>
