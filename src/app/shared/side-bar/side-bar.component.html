@@ -1,14 +1,31 @@
-<ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
-</ul>
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav flex-column bg-light">
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><i class="fas fa-home"></i> DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><i class="fas fa-stream"></i> INICIAR TRANSMISSÃO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">UPLOAD - VIDEOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">GERENCIAMENTO DE CANAIS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">ANALITYCS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">INFORMAÇÕES DA CONTA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">LOGOUT</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-7">
+        <ng-content></ng-content>
+    </div>
+</div>
