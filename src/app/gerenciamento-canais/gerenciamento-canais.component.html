@@ -1,0 +1,30 @@
+<h3>Gerenciamento de Canais</h3>
+
+<div class="row">
+    <div class="col-md-4 offset-8">
+        <input class="form-control" type="search" name="search" placeholder="Filtros">
+    </div>
+</div>
+
+<div class="m-3">
+    <div class="row">
+        <div class="container">
+            <div class="list-group" *ngFor="let item of canalLista">
+                <div href="#" class="list-group-item list-group-item-action">
+                    <span class="">{{item.nome}}</span>
+                    <button class="btn btn-link col-md-5">
+            Customizar Canal
+          </button>
+                    <button class="btn btn-link col-md-4">
+            Ver estatísticas
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-3 pull-right">
+    <div class="row">
+        <button class="btn btn-primary">CRIAR NOVO CANAL</button>
+    </div>
+</div>

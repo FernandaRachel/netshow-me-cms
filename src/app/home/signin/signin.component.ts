@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from "../../../../node_modules/@an
 import { Router } from "../../../../node_modules/@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
-import firebase = require("../../../../node_modules/firebase");
 import { resolveDirective } from "../../../../node_modules/@angular/core/src/render3/instructions";
 import { FirebaseAuth } from "../../../../node_modules/angularfire2";
 
