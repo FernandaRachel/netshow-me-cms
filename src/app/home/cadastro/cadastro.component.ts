@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "../../../../node_modules/@an
 import { Router } from "../../../../node_modules/@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
     templateUrl: './cadastro.component.html'
@@ -14,8 +15,7 @@ export class CadastroComponent implements OnInit{
 
     constructor(
         private formBuilder: FormBuilder,
-        private router: Router,
-        private fire: AngularFireAuth
+        private auth: AuthService
     ){
 
     }
@@ -28,16 +28,11 @@ export class CadastroComponent implements OnInit{
     }    
 
     criarUsuario(){
-        var email = this.cadastroForm.get('email').value;
+        const email = this.cadastroForm.get('email').value;
 
-        var senha = this.cadastroForm.get('senha').value;
+        const senha = this.cadastroForm.get('senha').value;
 
-        this.fire.auth.createUserWithEmailAndPassword(email,senha);
-    }
- 
-    redirect(){
-        this.router.navigateByUrl('');
-        
+        this.auth.signup(email,senha); 
     }
 
 }

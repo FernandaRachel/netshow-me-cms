@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
