@@ -5,6 +5,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
 import { resolveDirective } from "../../../../node_modules/@angular/core/src/render3/instructions";
 import { FirebaseAuth } from "../../../../node_modules/angularfire2";
+import { AuthService } from "../../auth/auth.service";
+
 
 @Component({
     templateUrl: './signin.component.html'
@@ -16,8 +18,7 @@ export class SignInComponent implements OnInit{
 
     constructor(
         private formBuilder: FormBuilder,
-        private router: Router,
-        private fire: AngularFireAuth
+        private auth: AuthService
     ){
 
     }
@@ -30,37 +31,12 @@ export class SignInComponent implements OnInit{
     }    
 
     autenticar(){
-        var email = this.loginForm.get('email').value;
+        const email = this.loginForm.get('email').value;
 
-        var senha = this.loginForm.get('senha').value;
+        const senha = this.loginForm.get('senha').value;
 
-        var result = this.fire.auth.signInWithEmailAndPassword(email,senha);
-
-        return this.login(result);
+        this.auth.login(email,senha); 
         
-        
-    }
-
-    login(result: Promise<auth.UserCredential>){
-        console.log(this.fire.auth.currentUser.email);
-        const user = this.fire.auth.currentUser;
-        if(user != null){
-            return this.redirect();
-        }
-        // this.fire.auth.onAuthStateChanged(function(user) {
-        //     if (user) {
-        //         console.log("deu certo");
-        //         this.redirect();
-        //     } else {
-        //       console.log("erro");
-        //     }
-        //   });          
-    }
- 
-
-    redirect(){
-        this.router.navigateByUrl('main');
-        
-    }
+    } 
 
 }

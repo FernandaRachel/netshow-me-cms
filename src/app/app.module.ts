@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
+import { AuthService } from './auth/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { UploadVideoComponent } from './upload-video/upload-video.component';
     AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
