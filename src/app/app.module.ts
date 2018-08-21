@@ -1,3 +1,4 @@
+import { GerenciamentoCanaisComponent } from './gerenciamento-canais/gerenciamento-canais.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,14 +12,20 @@ import { HomeModule } from './home/home.module';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
+import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { AuthService } from './auth/auth.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     NavBarComponent,
-    SideBarComponent
+    SideBarComponent,
+    GerenciamentoCanaisComponent,
+    IniciarTransmissaoComponent,
+    UploadVideoComponent
   ],
   imports: [
     BrowserModule,
