@@ -4,13 +4,13 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyDCjmzJqZf8AwBJC981iegs1x7HXFyEiN0",
-    authDomain: "netshow-me-cms.firebaseapp.com",
-    databaseURL: "https://netshow-me-cms.firebaseio.com",
-    projectId: "netshow-me-cms",
-    storageBucket: "netshow-me-cms.appspot.com",
-    messagingSenderId: "229685072311"
+  firebase: { 
+    apiKey: "AIzaSyBqQnfchn4CepmCv9ydFmmCtr_HUmq_Ea0",
+    authDomain: "netshowme-cms.firebaseapp.com",
+    databaseURL: "https://netshowme-cms.firebaseio.com",
+    projectId: "netshowme-cms",
+    storageBucket: "netshowme-cms.appspot.com",
+    messagingSenderId: "262816614560"
   }
 };
 
