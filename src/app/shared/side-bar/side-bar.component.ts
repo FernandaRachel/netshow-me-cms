@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../auth/auth.service';
 
 
 @Component({
@@ -11,7 +12,10 @@ export class SideBarComponent {
 
   isLoggin: boolean;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private auth : AuthService
+    ) {
 
   }
 
@@ -21,6 +25,10 @@ export class SideBarComponent {
     // console.log(route);
     // return true;
   }
+
+   sair(){
+     this.auth.logout();
+   }
 
 }
 
