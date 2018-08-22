@@ -1,42 +1,27 @@
-<div class="container col-4">
-<h4 class="text-center font-weight-bold text-primary">Bem-Vindo!</h4>
+<div class="container offset-5 col-7">
+    <h4 class="text-center font-weight-bold text-primary">Bem-Vindo!</h4>
 
-<form [formGroup]="loginForm" class="form mt-4" (submit)="autenticar()">
+    <form [formGroup]="loginForm" class="form mt-4" (submit)="autenticar()">
 
-    <div class="form-group">
-        <input 
-            formControlName="email"
-            class="form-control" 
-            placeholder="Email" 
-            autofocus>  
-        <small
-            *ngIf="loginForm.get('email').errors?.required"
-            class="text-danger d-block mt-2">
+        <div class="form-group">
+            <input formControlName="email" class="form-control" placeholder="Email" autofocus>
+            <small *ngIf="loginForm.get('email').errors?.required" class="text-danger d-block mt-2">
             Digite um Email!
         </small>
-    </div>
+        </div>
 
-    <div class="form-group">
-        <input
-        formControlName="senha"
-            type="password" 
-            class="form-control" 
-            placeholder="Senha">  
-        <small
-            *ngIf="loginForm.get('senha').errors?.required"
-            class="text-danger d-block mt-2">
+        <div class="form-group">
+            <input formControlName="senha" type="password" class="form-control" placeholder="Senha">
+            <small *ngIf="loginForm.get('senha').errors?.required" class="text-danger d-block mt-2">
             Digite uma Senha!
-        </small>            
-    </div>
+        </small>
+        </div>
 
-    <button 
-        [disabled]="loginForm.invalid"
-        type="submit" 
-        class="btn btn-primary btn-block">
+        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">
         login
     </button>
 
-</form>
+    </form>
 
-<p>Não tem uma conta? <a [routerLink]="['\cadastro']">Crie aqui</a></p>
+    <p>Não tem uma conta? <a [routerLink]="['\cadastro']">Crie aqui</a></p>
 </div>

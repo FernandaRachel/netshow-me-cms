@@ -15,6 +15,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
 import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { AuthService } from './auth/auth.service';
+import { ShowMenuModule } from './directives/show-menu.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AuthService } from './auth/auth.service';
     AngularFontAwesomeModule,
     HomeModule,
     AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ShowMenuModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

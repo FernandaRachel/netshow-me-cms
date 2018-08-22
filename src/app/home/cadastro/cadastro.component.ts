@@ -1,5 +1,5 @@
-import { Component, OnInit } from "../../../../node_modules/@angular/core";
-import { FormGroup, FormBuilder, Validators } from "../../../../node_modules/@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 import { AuthService } from "../../auth/auth.service";
 
