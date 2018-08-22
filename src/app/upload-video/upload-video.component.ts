@@ -9,6 +9,8 @@ var jsonCanais = require('./dados-videos-json.json');
 })
 export class UploadVideoComponent implements OnInit {
 
+  enviado:boolean;
+
   videosLista:any[];
 
   constructor() { }
@@ -18,4 +20,7 @@ export class UploadVideoComponent implements OnInit {
     console.log(jsonCanais);
   }
 
+  enviar(){
+    this.enviado = true;
+  }
 }
