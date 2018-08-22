@@ -1,10 +1,10 @@
-import { Component, OnInit } from "../../../../node_modules/@angular/core";
-import { FormGroup, FormBuilder, Validators } from "../../../../node_modules/@angular/forms";
-import { Router } from "../../../../node_modules/@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
-import { resolveDirective } from "../../../../node_modules/@angular/core/src/render3/instructions";
-import { FirebaseAuth } from "../../../../node_modules/angularfire2";
+import { resolveDirective } from "@angular/core/src/render3/instructions";
+import { FirebaseAuth } from "angularfire2";
 import { AuthService } from "../../auth/auth.service";
 
 
