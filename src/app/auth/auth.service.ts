@@ -75,11 +75,15 @@ export class AuthService {
         console.log(this.displayName);
 
         console.log('Nice, it worked!');
-        this.router.navigateByUrl('main');
+        this.router.navigateByUrl('iniciarTransmissao');
+        location.reload();
+
       } else {
 
         console.log('Até mais!');
         this.router.navigateByUrl('');
+
+        location.reload();
 
       }
 

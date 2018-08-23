@@ -1,15 +1,10 @@
 <h3>Iniciar Transmissão</h3>
 
-<div class="row">
-    <div class="col-md-4 offset-1 m-4">
-        <select class="form-control" id="exampleFormControlSelect1">
-      <option selected>Iniciar Transmissão</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+<div class="row p-4">
+    <div class="col-md-5">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#iniciarTransmissao">INICIAR TRANSMISSÃO</button>
     </div>
+
 </div>
 
 <div class="container-frame">
@@ -18,9 +13,6 @@
         <div class="container">
             <h5>Configurações das Transmissões</h5>
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action">
-          INICIAR LISTA DE EMAIL
-        </a>
                 <a href="#" class="list-group-item list-group-item-action">IMPORTAR LISTA DE E-MAIL</a>
                 <a href="#" class="list-group-item list-group-item-action">DEFINIR COMO PRIVADO</a>
                 <a href="#" class="list-group-item list-group-item-action">DISPONIBILIZAR APÓS TRANSMISSÃO</a>
@@ -32,5 +24,30 @@
         <i class="p-2 fab fa-facebook-f"></i>
         <i class="p-2 fab fa-youtube"></i>
         <i class="p-2 fas fa-link"></i>
+    </div>
+</div>
+
+<!-- MODAL INICIAR TRANSMISSÃO -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="iniciarTransmissao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Transmissão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center shadow box-size">
+                    <i class="far fa-play-circle icon-play"></i>
+                </div>
+            </div>
+            <!-- <button class="btn btn-dark" (click)="enviar()">
+        Enviar
+      </button> -->
+        </div>
     </div>
 </div>

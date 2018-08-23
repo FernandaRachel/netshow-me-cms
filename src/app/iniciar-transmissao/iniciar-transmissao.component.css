@@ -5,3 +5,14 @@
 div.icons-size i {
     font-size: 20px;
 }
+
+.icon-play {
+    font-size: 8em;
+}
+
+.box-size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 57vh;
+}
