@@ -42,8 +42,12 @@
         </button>
             </div>
             <div class="modal-body">
-                <form *ngIf="!enviado; else showMessage">
-                    <input type="file" name="">
+                <form [formGroup]="videoForm" *ngIf="!enviado; else showMessage">
+                    <div class="form-group">
+                        <label>Nome do video</label>
+                        <input type="text" class="form-control" formControlName="nome">
+                    </div>
+                    <input type="file" formControlName="url">
                 </form>
                 <ng-template #showMessage>
                     <div class="alert alert-success">Enviado !</div>
