@@ -7,17 +7,11 @@ import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
 
 import { AngularFireStorage } from 'angularfire2/storage';
-import { Users } from '../users/users';
 
 
 @Injectable()
-export class AuthService {
-  user: Observable<Users>;
 
-  uid : string;
-  email: string;
-  photoURL: string;
-  displayName: string;
+export class UsersService{
 
   constructor(
     private firebaseAuth: AngularFireAuth,
@@ -25,20 +19,17 @@ export class AuthService {
     private storage: AngularFireStorage,
     private router: Router){
     }
-    
-  signIn(email: string, password: string) {
-    return this.firebaseAuth
-      .auth.signInWithEmailAndPassword(email, password);
+
+    userInfo(){        
+      const user =  this.firebaseAuth.auth.currentUser;
+      return user;  
+
     }
 
-  signUp(email: string, password: string) {
-    return this.firebaseAuth
-      .auth.createUserWithEmailAndPassword(email, password);
-    }
-    
-  logout() {
-    this.firebaseAuth
-      .auth.signOut();
-  }
+          upload(dados: File){
+            var fileUpload = this.storage.storage.ref('images/users/' + dados.name);
+        
+            var task = fileUpload.put(dados);
+          }
 
 }

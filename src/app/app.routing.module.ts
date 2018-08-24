@@ -4,14 +4,26 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './home/signin/signin.component';
-import { CadastroComponent } from './home/cadastro/cadastro.component';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
+import { SignUpComponent } from './home/signup/signup.component';
+import { UsersInformationComponent } from './users/users-information/users-information.component';
 
 
-const routes: Routes = [
+const routes: Routes = [    
     {
-        path:'\iniciarTransmissao2',
-        component: UploadVideoComponent
+        path:'',
+        pathMatch: 'full',
+        component: SignInComponent
+    },
+    {
+        path:'\registrar',
+        pathMatch: 'full',
+        component: SignUpComponent
+    },
+    {
+        path:'\inicio',
+        pathMatch: 'full',
+        component: MainPageComponent
     },
     {
         path:'\iniciarTransmissao',
@@ -19,25 +31,19 @@ const routes: Routes = [
         component: IniciarTransmissaoComponent
     },
     {
+        path:'\iniciarTransmissao2',
+        component: UploadVideoComponent
+    },       
+    {
         path:'\gerenciamentoCanais',
         pathMatch: 'full',
         component: GerenciamentoCanaisComponent
     },
     {
-        path:'\main',
+        path:'\informacoesConta',
         pathMatch: 'full',
-        component: MainPageComponent
+        component: UsersInformationComponent
     },
-    {
-        path:'',
-        pathMatch: 'full',
-        component: SignInComponent
-    },
-    {
-        path:'\cadastro',
-        pathMatch: 'full',
-        component: CadastroComponent
-    }
     
 ];
 

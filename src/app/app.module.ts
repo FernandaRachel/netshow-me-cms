@@ -16,6 +16,11 @@ import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-trans
 import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { AuthService } from './auth/auth.service';
 import { ShowMenuModule } from './directives/show-menu.module';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersInformationComponent } from './users/users-information/users-information.component';
+import { UsersService } from './users/users.service';
 
 
 @NgModule({
@@ -26,7 +31,8 @@ import { ShowMenuModule } from './directives/show-menu.module';
     SideBarComponent,
     GerenciamentoCanaisComponent,
     IniciarTransmissaoComponent,
-    UploadVideoComponent
+    UploadVideoComponent,
+    UsersInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +41,13 @@ import { ShowMenuModule } from './directives/show-menu.module';
     HomeModule,
     AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
     AngularFireAuthModule,
-    ShowMenuModule
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    ShowMenuModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

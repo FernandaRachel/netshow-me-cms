@@ -6,7 +6,7 @@
             Por favor preencha os dados para criar sua conta
         </p>
         
-        <form [formGroup]="cadastroForm" class="form mt-4" (submit)="criarUsuario()">
+        <form [formGroup]="signUpForm" class="form mt-4" (submit)="signUp()">
         
             <div class="form-group">
                 <input 
@@ -15,7 +15,7 @@
                     placeholder="Email" 
                     autofocus>  
                 <small
-                    *ngIf="cadastroForm.get('email').errors?.required"
+                    *ngIf="signUpForm.get('email').errors?.required"
                     class="text-danger d-block mt-2">
                     Digite um Email!
                 </small>
@@ -23,19 +23,19 @@
         
             <div class="form-group">
                 <input
-                formControlName="senha"
+                formControlName="password"
                     type="password" 
                     class="form-control" 
                     placeholder="Senha">  
                 <small
-                    *ngIf="cadastroForm.get('senha').errors?.required"
+                    *ngIf="signUpForm.get('password').errors?.required"
                     class="text-danger d-block mt-2">
                     Digite uma Senha!
                 </small>            
             </div>
         
             <button 
-                [disabled]="cadastroForm.invalid"
+                [disabled]="signUpForm.invalid"
                 type="submit" 
                 class="btn btn-primary btn-block">
                 Criar Conta
@@ -43,5 +43,7 @@
         
         </form>
         
-        <p>Já tem uma Conta? <a [routerLink]="['']">Entre aqui</a></p>
+        <p>Já tem uma Conta?
+            <a [routerLink]="['']">Entre aqui</a>
+        </p>
         </div>
