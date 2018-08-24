@@ -6,9 +6,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './home/signin/signin.component';
 import { CadastroComponent } from './home/cadastro/cadastro.component';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 const routes: Routes = [
+    {
+        path:'\analytics',
+        component: AnalyticsComponent
+    },
     {
         path:'\iniciarTransmissao2',
         component: UploadVideoComponent

@@ -1,3 +1,4 @@
+import { UsuarioComponent } from './home/usuario/usuario.component';
 import { UploadService } from './auth/upload.service';
 import { GerenciamentoCanaisComponent } from './gerenciamento-canais/gerenciamento-canais.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
@@ -20,6 +21,9 @@ import { ShowMenuModule } from './directives/show-menu.module';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FormsModule } from '../../node_modules/@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ChartModule } from 'angular-highcharts';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     GerenciamentoCanaisComponent,
     IniciarTransmissaoComponent,
-    UploadVideoComponent
+    UsuarioComponent,
+    UploadVideoComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ShowMenuModule,
     AngularFireDatabaseModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
+    HighchartsChartModule
   ],
   providers: [AuthService,
   UploadService],
