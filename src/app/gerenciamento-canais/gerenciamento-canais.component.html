@@ -11,13 +11,16 @@
         <div class="container">
             <div class="list-group" *ngFor="let item of canalLista">
                 <div href="#" class="list-group-item list-group-item-action">
-                    <span class="">{{item.nome}}</span>
-                    <button class="btn btn-link col-md-5">
-            Customizar Canal
-          </button>
-                    <button class="btn btn-link col-md-4">
-            Ver estatísticas
-          </button>
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <span>{{item.nome}}</span>
+                        </div>
+                        <div class="col-md-7">
+                            <button class="btn btn-primary col-md-4 pull-right">
+                                Acessar
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

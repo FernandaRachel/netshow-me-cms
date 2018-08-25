@@ -1,22 +1,22 @@
 <div class="row">
-    <div class="col-md-3  bg-light" showMenu>
-        <ul class="nav flex-column">
-            <li class="nav-item">
+    <div showMenu class="col-md-3">
+        <ul class="nav flex-column align-text">
+            <li class="nav-item p-2">
                 <a class="nav-link disabled" href="#"><i class="fas fa-home"></i> DASHBOARD</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item p-2">
                 <a class="nav-link disabled" [routerLink]="['/iniciarTransmissao']"><i class="fas fa-stream"></i> INICIAR TRANSMISSÃO</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item p-2">
                 <a class="nav-link disabled" [routerLink]="['/iniciarTransmissao2']"><i class="fas fa-video"></i> UPLOAD - VIDEOS</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" [routerLink]="['/gerenciamentoCanais']">GERENCIAMENTO DE CANAIS</a>
+            <li class="nav-item p-2">
+                <a class="nav-link disabled" [routerLink]="['/gerenciamentoCanais']"><i class="fas fa-cogs"></i> GERENCIAMENTO DE CANAIS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item p-2">
                 <a class="nav-link disabled" [routerLink]="['/analytics']"><i class="fas fa-chart-bar"></i> ANALITYCS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item p-2">
                 <a class="nav-link disabled" href="#"><i class="fas fa-info"></i> INFORMAÇÕES DA CONTA</a>
             </li>
             <li class="nav-item">
@@ -30,7 +30,7 @@
         </ul>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-8 m-3">
         <ng-content></ng-content>
     </div>
 </div>

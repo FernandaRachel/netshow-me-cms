@@ -8,7 +8,7 @@
     ],
     "rewrites": [
       {
-        "source": "!{/node_modules,/elements}/**",
+        "source": "**",
         "destination": "/index.html"
       }
     ]
