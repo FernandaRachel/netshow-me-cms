@@ -1,0 +1,90 @@
+<div class="container col-4">
+        <h4 class="text-center font-weight-bold text-primary">
+            Informações da Conta
+        </h4>
+        <p class="text-center font-weight-bold text-muted">
+            Meu Perfil
+        </p>
+        
+        <form [formGroup]="photoForm" class="form mt-4" (change)="upload()">
+            <div class="form-group">
+                <img class="img-fluid rounded-circle"
+                *ngIf="photoForm.get('carregaFoto')"
+                [src]="photoUrl">
+            </div>
+            <div class="form-group">
+                    <input 
+                        formControlName="file"
+                        type ="file"
+                        accept="image/*"
+                        (change)="file = $event.target.files[0]">
+                    <small
+                        *ngIf="photoForm.get('file').errors?.required"
+                        class="text-danger d-block mt-2">
+                        Selecione um arquivo
+                    </small>
+                </div>   
+        </form>    
+
+        <form [formGroup]="informationForm" class="form mt-4" (submit)="upload()">  
+            <div class="form-group">
+                <input 
+                    formControlName="nameChannel"
+                    class="form-control" 
+                    [placeholder]="nameChannel" 
+                    autofocus>  
+                <small
+                    *ngIf="informationForm.get('nameChannel').errors?.required"
+                    class="text-danger d-block mt-2">
+                    Digite um nome para o Canal!
+                </small>
+            </div>
+            <div class="form-group">
+                    <input 
+                        formControlName="name"
+                        class="form-control" 
+                        [placeholder]="name" 
+                        autofocus>  
+                    <small
+                        *ngIf="informationForm.get('name').errors?.required"
+                        class="text-danger d-block mt-2">
+                        Digite o seu Nome!
+                    </small>
+                </div>
+        
+            <div class="form-group">
+                <input 
+                    formControlName="email"
+                    class="form-control" 
+                    [placeholder]="email"
+                    autofocus>  
+                <small
+                    *ngIf="informationForm.get('email').errors?.required"
+                    class="text-danger d-block mt-2">
+                    Digite um Email!
+                </small>
+            </div>
+        
+            <div class="form-group">
+                <input
+                    formControlName="password"
+                    type="password" 
+                    class="form-control" 
+                    placeholder="Digite uma nova Senha">  
+                <small
+                    *ngIf="informationForm.get('password').errors?.required"
+                    class="text-danger d-block mt-2">
+                    Digite uma Senha!
+                </small>            
+            </div>
+        
+            <button 
+                [disabled]="informationForm.invalid"
+                type="submit" 
+                class="btn btn-primary btn-block">
+                Criar Conta
+            </button>
+        
+        </form>
+
+        </div>

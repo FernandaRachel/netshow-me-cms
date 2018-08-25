@@ -1,4 +1,3 @@
-import { UsuarioComponent } from './home/usuario/usuario.component';
 import { UploadService } from './auth/upload.service';
 import { GerenciamentoCanaisComponent } from './gerenciamento-canais/gerenciamento-canais.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
@@ -18,9 +17,11 @@ import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-trans
 import { UploadVideoComponent } from './upload-video/upload-video.component';
 import { AuthService } from './auth/auth.service';
 import { ShowMenuModule } from './directives/show-menu.module';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { FormsModule } from '../../node_modules/@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersInformationComponent } from './users/users-information/users-information.component';
+import { UsersService } from './users/users.service';
 import { ChartModule } from 'angular-highcharts';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -34,7 +35,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     SideBarComponent,
     GerenciamentoCanaisComponent,
     IniciarTransmissaoComponent,
-    UsuarioComponent,
+    UploadVideoComponent,
+    UsersInformationComponent,
     UploadVideoComponent,
     AnalyticsComponent
   ],
@@ -45,15 +47,19 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HomeModule,
     AngularFireModule.initializeApp(environment.firebase, 'netshow-me-cms'),
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     ShowMenuModule,
-    AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
     ChartModule,
     HighchartsChartModule
   ],
-  providers: [AuthService,
-  UploadService],
+  providers: [
+    AuthService,
+    UsersService,
+    UploadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,53 +4,62 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './home/signin/signin.component';
-import { CadastroComponent } from './home/cadastro/cadastro.component';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
+import { SignUpComponent } from './home/signup/signup.component';
+import { UsersInformationComponent } from './users/users-information/users-information.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 
 
 const routes: Routes = [
     {
-        path:'\analytics',
-        component: AnalyticsComponent
-    },
-    {
-        path:'\iniciarTransmissao2',
-        component: UploadVideoComponent
-    },
-    {
-        path:'\iniciarTransmissao',
-        pathMatch: 'full',
-        component: IniciarTransmissaoComponent
-    },
-    {
-        path:'\gerenciamentoCanais',
-        pathMatch: 'full',
-        component: GerenciamentoCanaisComponent
-    },
-    {
-        path:'\main',
-        pathMatch: 'full',
-        component: MainPageComponent
-    },
-    {
-        path:'',
+        path: '',
         pathMatch: 'full',
         component: SignInComponent
     },
     {
-        path:'\cadastro',
+        path: '\analytics',
+        component: AnalyticsComponent
+    },
+    {
+        path: '\iniciarTransmissao2',
+        component: UploadVideoComponent
+    },
+    {
+        path: '\registrar',
         pathMatch: 'full',
-        component: CadastroComponent
+        component: SignUpComponent
+    },
+    {
+        path: '\inicio',
+        pathMatch: 'full',
+        component: MainPageComponent
+    },
+    {
+        path: '\iniciarTransmissao',
+        pathMatch: 'full',
+        component: IniciarTransmissaoComponent
+    },
+    {
+        path: '\iniciarTransmissao2',
+        component: UploadVideoComponent
+    },
+    {
+        path: '\gerenciamentoCanais',
+        pathMatch: 'full',
+        component: GerenciamentoCanaisComponent
+    },
+    {
+        path: '\informacoesConta',
+        pathMatch: 'full',
+        component: UsersInformationComponent
     }
-    
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes) 
+    imports: [
+        RouterModule.forRoot(routes)
     ],
-    exports: [ RouterModule ]
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
 

@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-import { Observable } from '../../../node_modules/rxjs';
-import { Router } from '../../../node_modules/@angular/router';
+import * as firebase from 'firebase';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
-import { User } from './user';
+
+import { AngularFireStorage } from 'angularfire2/storage';
+import { Users } from '../users/users';
 
 
 @Injectable()
 export class AuthService {
-  user: Observable<User>;
+  user: Observable<Users>;
 
   uid : string;
   email: string;
@@ -18,45 +20,25 @@ export class AuthService {
   displayName: string;
 
   constructor(
-      private firebaseAuth: AngularFireAuth,
-      private router: Router){
-
+    private firebaseAuth: AngularFireAuth,
+    private store: AngularFirestore,
+    private storage: AngularFireStorage,
+    private router: Router){
+    }
+    
+  signIn(email: string, password: string) {
+    return this.firebaseAuth
+      .auth.signInWithEmailAndPassword(email, password);
     }
 
-  signup(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Success!', value);
-        this.router.navigateByUrl('');
-      })
-      .catch(err => {
-        alert(err.message);
-      });    
-  }
-
-  login(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-
-        this.userData();
-        // console.log('Nice, it worked!');
-        // this.router.navigateByUrl('main');
-      })
-      .catch(err => {
-        alert(err.message);
-      });
-  }
-
+  signUp(email: string, password: string) {
+    return this.firebaseAuth
+      .auth.createUserWithEmailAndPassword(email, password);
+    }
+    
   logout() {
     this.firebaseAuth
-      .auth
-      .signOut();
-
-      this.userData();
+      .auth.signOut();
   }
 
   userData(){
