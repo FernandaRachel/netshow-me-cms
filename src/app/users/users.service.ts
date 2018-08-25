@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
 
@@ -26,10 +24,10 @@ export class UsersService{
 
     }
 
-          upload(dados: File){
-            var fileUpload = this.storage.storage.ref('images/users/' + dados.name);
-        
-            var task = fileUpload.put(dados);
-          }
+    upload(dados: File){
+      var fileUpload = this.storage.storage.ref('images/users/' + dados.name);
+          
+      var task = fileUpload.put(dados);
+    }
 
 }

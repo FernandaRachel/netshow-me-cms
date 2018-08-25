@@ -24,7 +24,11 @@ export class UsersInformationComponent implements OnInit{
     password: string;
     nameChannel: string;
     photoUrl: any;
-    data: string[];
+    updateName: string;
+    updateEmail: string;
+    updatePassword: string;
+    updateNameChannel: string;
+    updatePhotoUrl: any;
 
     constructor(
         private firebaseAuth: AngularFireAuth,
@@ -50,10 +54,10 @@ export class UsersInformationComponent implements OnInit{
 
         this.informationForm = this.formBuilder.group({ 
 
-            nameChannel:[this.nameChannel, Validators.required],
-            name:[this.name, Validators.required],
-            email:[this.email, Validators.required],
-            password:[this.password, Validators.required]
+            updateNameChannel:['', Validators.required],
+            updateName:['', Validators.required],
+            updateEmail:['', Validators.required],
+            updatePassword:['', Validators.required]
 
         });
     }   
@@ -68,13 +72,14 @@ export class UsersInformationComponent implements OnInit{
                 const docRef = this.store.firestore.collection("users")
                 .doc(this.id);
 
+                console.log(this.id);
+
                 let observable = docRef.get();
-                console.log(observable);
-                observable.then(doc => {
+                observable.then(function(doc){
                     const data = doc.data();
-                    this.email = data.email;
-                    console.log(this.email);
+                    console.log(data);
                     this.name = data.name;
+                    console.log(this.name);
                     this.email = data.email;
                     this.password = data.password;
                     this.nameChannel = data.nameChannel;
@@ -114,4 +119,14 @@ export class UsersInformationComponent implements OnInit{
         });   
                 
     }
+
+    updateInfo(){
+        console.log(this.name);
+        this.store.firestore.collection("users").doc(this.id)
+        .update(this.updateName,
+                this.updateEmail,
+                this.updatePassword,
+                this.updateNameChannel,
+                this.updatePhotoUrl);
+        }
 }

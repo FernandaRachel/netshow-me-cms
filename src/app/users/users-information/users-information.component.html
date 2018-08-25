@@ -8,7 +8,8 @@
         
         <form [formGroup]="photoForm" class="form mt-4" (change)="upload()">
             <div class="form-group">
-                <img class="img-fluid rounded-circle"
+                <img class="img-fluid rounded-circle align-center"
+                 style=" width: 150px; height: 150px;"
                 *ngIf="photoForm.get('carregaFoto')"
                 [src]="photoUrl">
             </div>
@@ -26,27 +27,29 @@
                 </div>   
         </form>    
 
-        <form [formGroup]="informationForm" class="form mt-4" (submit)="upload()">  
+        <form [formGroup]="informationForm" class="form mt-4" (submit)="updateInfo()">  
             <div class="form-group">
                 <input 
-                    formControlName="nameChannel"
+                    formControlName="updateNameChannel"
                     class="form-control" 
-                    [placeholder]="nameChannel" 
+                    placeholder="Nome do Canal" 
+                    [value] = "nameChannel"
                     autofocus>  
                 <small
-                    *ngIf="informationForm.get('nameChannel').errors?.required"
+                    *ngIf="informationForm.get('updateNameChannel').errors?.required"
                     class="text-danger d-block mt-2">
                     Digite um nome para o Canal!
                 </small>
             </div>
             <div class="form-group">
                     <input 
-                        formControlName="name"
+                        formControlName="updateName"
                         class="form-control" 
-                        [placeholder]="name" 
+                        placeholder="Nome" 
+                        [value] = "name"
                         autofocus>  
                     <small
-                        *ngIf="informationForm.get('name').errors?.required"
+                        *ngIf="informationForm.get('updateName').errors?.required"
                         class="text-danger d-block mt-2">
                         Digite o seu Nome!
                     </small>
@@ -54,12 +57,13 @@
         
             <div class="form-group">
                 <input 
-                    formControlName="email"
+                    formControlName="updateEmail"
                     class="form-control" 
-                    [placeholder]="email"
+                    placeholder="Email"
+                    [value]="email"
                     autofocus>  
                 <small
-                    *ngIf="informationForm.get('email').errors?.required"
+                    *ngIf="informationForm.get('updateEmail').errors?.required"
                     class="text-danger d-block mt-2">
                     Digite um Email!
                 </small>
@@ -67,12 +71,12 @@
         
             <div class="form-group">
                 <input
-                    formControlName="password"
+                    formControlName="updatePassword"
                     type="password" 
                     class="form-control" 
                     placeholder="Digite uma nova Senha">  
                 <small
-                    *ngIf="informationForm.get('password').errors?.required"
+                    *ngIf="informationForm.get('updatePassword').errors?.required"
                     class="text-danger d-block mt-2">
                     Digite uma Senha!
                 </small>            
@@ -82,7 +86,7 @@
                 [disabled]="informationForm.invalid"
                 type="submit" 
                 class="btn btn-primary btn-block">
-                Criar Conta
+                Atualizar
             </button>
         
         </form>
