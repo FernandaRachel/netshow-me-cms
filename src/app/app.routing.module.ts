@@ -7,51 +7,59 @@ import { SignInComponent } from './home/signin/signin.component';
 import { IniciarTransmissaoComponent } from './iniciar-transmissao/iniciar-transmissao.component';
 import { SignUpComponent } from './home/signup/signup.component';
 import { UsersInformationComponent } from './users/users-information/users-information.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
 
 
-const routes: Routes = [    
+const routes: Routes = [
     {
-        path:'',
+        path: '',
         pathMatch: 'full',
         component: SignInComponent
     },
     {
-        path:'\registrar',
+        path: '\analytics',
+        component: AnalyticsComponent
+    },
+    {
+        path: '\iniciarTransmissao2',
+        component: UploadVideoComponent
+    },
+    {
+        path: '\registrar',
         pathMatch: 'full',
         component: SignUpComponent
     },
     {
-        path:'\inicio',
+        path: '\inicio',
         pathMatch: 'full',
         component: MainPageComponent
     },
     {
-        path:'\iniciarTransmissao',
+        path: '\iniciarTransmissao',
         pathMatch: 'full',
         component: IniciarTransmissaoComponent
     },
     {
-        path:'\iniciarTransmissao2',
+        path: '\iniciarTransmissao2',
         component: UploadVideoComponent
-    },       
+    },
     {
-        path:'\gerenciamentoCanais',
+        path: '\gerenciamentoCanais',
         pathMatch: 'full',
         component: GerenciamentoCanaisComponent
     },
     {
-        path:'\informacoesConta',
+        path: '\informacoesConta',
         pathMatch: 'full',
         component: UsersInformationComponent
-    },
-    
+    }
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes) 
+    imports: [
+        RouterModule.forRoot(routes)
     ],
-    exports: [ RouterModule ]
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
 

@@ -41,4 +41,37 @@ export class AuthService {
       .auth.signOut();
   }
 
+  userData(){
+
+    this.firebaseAuth.auth.onAuthStateChanged(firebaseUser =>{
+      if(firebaseUser){
+
+        this.uid = firebaseUser.uid;
+        this.email = firebaseUser.email;
+        this.photoURL = firebaseUser.photoURL;
+        this.displayName = firebaseUser.displayName;
+
+        console.log(this.uid);
+        console.log(this.email);
+        console.log(this.photoURL);
+        console.log(this.displayName);
+
+        console.log('Nice, it worked!');
+        this.router.navigateByUrl('iniciarTransmissao');
+        location.reload();
+
+      } else {
+
+        console.log('Até mais!');
+        this.router.navigateByUrl('');
+
+        location.reload();
+
+      }
+
+    })
+
+  }
+
+
 }

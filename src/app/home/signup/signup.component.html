@@ -1,49 +1,34 @@
 <div class="container col-4">
-        <h4 class="text-center font-weight-bold text-primary">
-            Crie sua Conta
-        </h4>
-        <p class="text-center font-weight-bold text-muted">
-            Por favor preencha os dados para criar sua conta
-        </p>
-        
-        <form [formGroup]="signUpForm" class="form mt-4" (submit)="signUp()">
-        
-            <div class="form-group">
-                <input 
-                    formControlName="email"
-                    class="form-control" 
-                    placeholder="Email" 
-                    autofocus>  
-                <small
-                    *ngIf="signUpForm.get('email').errors?.required"
-                    class="text-danger d-block mt-2">
-                    Digite um Email!
-                </small>
-            </div>
-        
-            <div class="form-group">
-                <input
-                formControlName="password"
-                    type="password" 
-                    class="form-control" 
-                    placeholder="Senha">  
-                <small
-                    *ngIf="signUpForm.get('password').errors?.required"
-                    class="text-danger d-block mt-2">
-                    Digite uma Senha!
-                </small>            
-            </div>
-        
-            <button 
-                [disabled]="signUpForm.invalid"
-                type="submit" 
-                class="btn btn-primary btn-block">
-                Criar Conta
-            </button>
-        
-        </form>
-        
-        <p>Já tem uma Conta?
-            <a [routerLink]="['']">Entre aqui</a>
-        </p>
+    <h4 class="text-center font-weight-bold text-primary">
+        Crie sua Conta
+    </h4>
+    <p class="text-center font-weight-bold text-muted">
+        Por favor preencha os dados para criar sua conta
+    </p>
+
+    <form [formGroup]="signUpForm" class="form mt-4" (submit)="signUp()">
+
+        <div class="form-group">
+            <input formControlName="email" class="form-control" placeholder="Email" autofocus>
+            <small *ngIf="signUpForm.get('email').errors?.required" class="text-danger d-block mt-2">
+        Digite um Email!
+      </small>
         </div>
+
+        <div class="form-group">
+            <input formControlName="password" type="password" class="form-control" placeholder="Senha">
+            <small *ngIf="signUpForm.get('password').errors?.required" class="text-danger d-block mt-2">
+        Digite uma Senha!
+      </small>
+        </div>
+
+        <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary btn-block">
+      Criar Conta
+    </button>
+
+    </form>
+
+    <p>Já tem uma Conta?
+        <a [routerLink]="['']">Entre aqui</a>
+    </p>
+</div>

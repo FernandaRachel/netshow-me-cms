@@ -1,3 +1,4 @@
+import { UploadService } from './auth/upload.service';
 import { GerenciamentoCanaisComponent } from './gerenciamento-canais/gerenciamento-canais.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,6 +22,9 @@ import { AngularFireStorage, AngularFireStorageModule } from 'angularfire2/stora
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersInformationComponent } from './users/users-information/users-information.component';
 import { UsersService } from './users/users.service';
+import { ChartModule } from 'angular-highcharts';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -32,7 +36,9 @@ import { UsersService } from './users/users.service';
     GerenciamentoCanaisComponent,
     IniciarTransmissaoComponent,
     UploadVideoComponent,
-    UsersInformationComponent
+    UsersInformationComponent,
+    UploadVideoComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +51,15 @@ import { UsersService } from './users/users.service';
     AngularFireStorageModule,
     ShowMenuModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
+    HighchartsChartModule
   ],
-  providers: [AuthService,UsersService],
+  providers: [
+    AuthService,
+    UsersService,
+    UploadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
